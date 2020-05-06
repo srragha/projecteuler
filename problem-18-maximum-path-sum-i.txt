@@ -1,0 +1,17 @@
+function maximumPathSumI(triangle) {
+  // Good luck!
+  var rows = triangle.length;
+  var sum = 0;
+  for (var i = rows - 2; i >= 0 ; i--) {
+    for (var j = 0 ; j < rows - 1 ; j++) {
+     triangle[i][j] = triangle[i][j] + Math.max (triangle[i+1][j], triangle[i+1][j+1]);
+    }
+  }
+  return triangle[0][0];
+}
+const testTriangle = [[3, 0, 0, 0],
+                      [7, 4, 0, 0],
+                      [2, 4, 6, 0],
+                      [8, 5, 9, 3]];
+
+//maximumPathSumI(testTriangle);
